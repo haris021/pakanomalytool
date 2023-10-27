@@ -23,10 +23,10 @@ import calendar
 
 # Access the service account key data from Streamlit Secrets
 service_account_key_data = st.secrets["private_key_id"]
-
+print("service_account_key_data")
 # Load the key data as a JSON object
 key_data = json.loads(service_account_key_data)
-
+print("key_data")
 # Initialize Earth Engine with the service account key data
 credentials = ee.ServiceAccountCredentials("", key_data=key_data)
 ee.Initialize(credentials)
