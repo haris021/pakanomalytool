@@ -22,7 +22,7 @@ import calendar
 
 
 google_cloud_secret = st.secrets["google_cloud"]
-service_account_key = google_cloud_secret["service_account_key"]
+service_account_key = google_cloud_secret["private_key_id"]
 # Initialize Earth Engine with the service account key
 credentials = ee.ServiceAccountCredentials("", key_data=service_account_key)
 ee.Initialize(credentials)
