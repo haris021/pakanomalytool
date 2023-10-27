@@ -7,3 +7,4 @@ geemap
 wxee
 google-auth
 google-cloud-storage
+earthengine-api
