@@ -31,7 +31,7 @@ st.divider()
 # Create a date filter
 start_date_api = f'{start_date.year}-{start_date.month}-{start_date.day}'
 end_date_api = f'{end_date.year}-{end_date.month}-{end_date.day}'
-
+ee.Authenticate()
 ee.Initialize()
 
 @st.cache_data
