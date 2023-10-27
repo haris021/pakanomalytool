@@ -22,10 +22,10 @@ import calendar
 
 
 # Get the path to the service account key from environment variables
-service_account = os.environ.get("dd1f942dac9b27b4ff3cea1d364c1c1c80f15127.json")
+service_account_key = st.secrets["SERVICE_ACCOUNT_KEY"]
 
 # Initialize Earth Engine with the service account key
-credentials = ee.ServiceAccountCredentials("", key_file=service_account)
+credentials = ee.ServiceAccountCredentials("", key_data=service_account_key)
 ee.Initialize(credentials)
 
 end_date = datetime.datetime.now() - datetime.timedelta(days = 10) 
