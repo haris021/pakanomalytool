@@ -1,5 +1,5 @@
 streamlit
-geopandas
-xarray
-rioxarray
+geopandas==0.13.2
+xarray==2023.1.0
+rioxarray==0.13.4
 
