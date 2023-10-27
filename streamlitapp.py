@@ -22,7 +22,7 @@ import calendar
 
 
 # Get the path to the service account key from environment variables
-service_account = os.environ.get("SERVICE_ACCOUNT_KEY_PATH")
+service_account = os.environ.get("dd1f942dac9b27b4ff3cea1d364c1c1c80f15127.json")
 
 # Initialize Earth Engine with the service account key
 credentials = ee.ServiceAccountCredentials("", key_file=service_account)
