@@ -21,8 +21,8 @@ import streamlit as st
 import calendar
 
 
-# Get the path to the service account key from environment variables
-service_account_key = st.secrets["service_account_key"]
+# Access the secret
+service_account_key = st.secrets["google_cloud"]["service_account_key"]
 
 # Initialize Earth Engine with the service account key
 credentials = ee.ServiceAccountCredentials("", key_data=service_account_key)
