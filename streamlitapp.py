@@ -21,9 +21,14 @@ import streamlit as st
 import calendar
 
 
-service_account_key= st.secrets["private_key_id"]
-# Initialize Earth Engine with the service account key
-credentials = ee.ServiceAccountCredentials("", key_data=service_account_key)
+# Access the service account key data from Streamlit Secrets
+service_account_key_data = st.secrets["private_key_id"]
+
+# Load the key data as a JSON object
+key_data = json.loads(service_account_key_data)
+
+# Initialize Earth Engine with the service account key data
+credentials = ee.ServiceAccountCredentials("", key_data=key_data)
 ee.Initialize(credentials)
 
 end_date = datetime.datetime.now() - datetime.timedelta(days = 10) 
