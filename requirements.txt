@@ -4,3 +4,4 @@ netcdf4==1.6.4
 geopandas==0.13.2
 rioxarray==0.13.4
 geemap
+wxee
