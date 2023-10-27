@@ -20,6 +20,14 @@ from datetime import timedelta
 import streamlit as st
 import calendar
 
+
+# Get the path to the service account key from environment variables
+service_account = os.environ.get("SERVICE_ACCOUNT_KEY_PATH")
+
+# Initialize Earth Engine with the service account key
+credentials = ee.ServiceAccountCredentials("", key_file=service_account)
+ee.Initialize(credentials)
+
 end_date = datetime.datetime.now() - datetime.timedelta(days = 10) 
 start_date = datetime.datetime.now() - datetime.timedelta(days = 15) 
 
@@ -31,8 +39,8 @@ st.divider()
 # Create a date filter
 start_date_api = f'{start_date.year}-{start_date.month}-{start_date.day}'
 end_date_api = f'{end_date.year}-{end_date.month}-{end_date.day}'
-ee.Authenticate()
-ee.Initialize()
+#ee.Authenticate()
+#ee.Initialize()
 
 @st.cache_data
 def get_data_from_gee(start_date, end_date):
