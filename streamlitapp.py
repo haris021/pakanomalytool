@@ -21,6 +21,10 @@ import streamlit as st
 import calendar
 
 
+
+json_data = st.secrets["json_data"]
+#service_account = st.secrets["service_account"]
+
 # Preparing values
 json_object = json.loads(json_data, strict=False)
 service_account = json_object['client_email']
@@ -30,8 +34,7 @@ credentials = ee.ServiceAccountCredentials(service_account, key_data=json_object
 ee.Initialize(credentials)
 
 
-#json_data = st.secrets["json_data"]
-#service_account = st.secrets["service_account"]
+
 
 
 end_date = datetime.datetime.now() - datetime.timedelta(days = 10) 
