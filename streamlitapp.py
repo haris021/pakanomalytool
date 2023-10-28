@@ -90,8 +90,8 @@ for division in shapefile["Division"]:
     shapefile.loc[shapefile["Division"] == division, "current_tmean"] = downloaded_dataset.sel(time = option).temperature_2m.rio.clip(division_geometry).mean().values
     # print(downloaded_dataset.temperature_2m.rio.clip(division_geometry).mean().values)
 
-shapefile['anomaly'] = shapefile['current_tmean'] - shapefile[f'{selected_option_month_name}_historic_tmean']
-shapefile['anomaly'] = shapefile['anomaly'] .astype(float)
+shapefile['Anomaly'] = shapefile['current_tmean'] - shapefile[f'{selected_option_month_name}_historic_tmean']
+shapefile['Anomaly'] = shapefile['Anomaly'] .astype(float)
 
 geojson_file = json.loads(shapefile.to_json())
 # Define your custom color scale for positive and negative values
@@ -105,7 +105,7 @@ color_scale = [
     (3, 'red'),     # Positive values in red
 ]
 
-fig = px.choropleth(shapefile, geojson=geojson_file, color="anomaly",
+fig = px.choropleth(shapefile, geojson=geojson_file, color="Anomaly",
                     locations="Division", featureidkey="properties.Division",
                     projection="mercator", color_continuous_scale= 'rdylbu_r', height = 800
                    )
