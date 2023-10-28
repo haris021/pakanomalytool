@@ -21,7 +21,7 @@ import streamlit as st
 import calendar
 
 
-json_data = st.secrets["json_data"]
+json_object = st.secrets["json_data"]
 service_account = st.secrets["service_account"]
 # Authorising the app
 credentials = ee.ServiceAccountCredentials(service_account, key_data=json_object)
