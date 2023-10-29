@@ -116,7 +116,7 @@ fig.update_geos(fitbounds="locations", visible=False)
 # import streamlit as st 
 
 st.plotly_chart(fig)
-
+st.markdown("Developed by Haris Mushtaq")
 # st.dataframe(shapefile.drop(['geometry'], axis = 1))
 
 downloading_data_state.text("")
